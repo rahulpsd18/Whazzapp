@@ -1,0 +1,45 @@
+{
+  "name": "whazzapp",
+  "version": "1.0.0",
+  "description": "A menubar/taskbar Whatsapp",
+  "main": "index.js",
+  "productName": "Whazzapp",
+  "scripts": {
+    "start": "electron index.js --disable-gpu",
+    "build:win": "electron-packager . WhazzApp --out=dist/ --platform=win32 --arch=x64 --icon=icon.ico --version-string.LegalCopyright=\"MIT License | Copyright (c) 2016 Risabh Kumar\" --version-string.CompanyName=\"rahulpsd18\" --version-string.ProductName=\"WhazzApp\" --version-string.FileDescription=\"WhazzApp\" --asar=true --overwrite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulpsd18/Whazzapp",
+    "docs": "https://github.com/rahulpsd18/Whazzapp/blob/master/README.md"
+  },
+  "keywords": [
+    "electron",
+    "whatsapp",
+    "whazzapp",
+    "menubar",
+    "taskbar",
+    "tray",
+    "messenger",
+    "html",
+    "desktop"
+  ],
+  "author": "Risabh Kumar <bullredeyes@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rahulpsd18/Whazzapp/issues"
+  },
+  "homepage": "https://rahulpsd18.github.io/Whazzapp",
+  "_npmUser": {
+    "name": "rahulpsd18",
+    "email": "rahulpsd18@gmail.com"
+  },
+  "devDependencies": {
+    "devtron": "^1.1.2",
+    "electron-packager": "^7.0.3",
+    "electron-prebuilt": "latest"
+  },
+  "dependencies": {
+    "menubar": "latest"
+  }
+}
