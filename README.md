@@ -19,7 +19,7 @@ To start the appication, simply run `npm start`
 
 # Task List
 - [x] ~~Use [electron-packager](https://github.com/electron-userland/electron-packager) to create a executable file~~
-- [ ] Correct the Position of the app when Resizing
+- [x] ~~Correct the Position of the app when Resizing~~
 - [ ] Add Manual Resizing
 - [ ] Add Dark Theme
 - [ ] Create a single setup package to help distribute the app

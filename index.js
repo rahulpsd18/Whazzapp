@@ -30,15 +30,15 @@ const contextMenu = electron.Menu.buildFromTemplate([
     checked: true,
     click() {
       if (tmp == 1){
-      checked: false,
-      mb.window.setAlwaysOnTop(false),
-      tmp=0
-    }
-    else {
-      checked: true,
-      mb.window.setAlwaysOnTop(true),
-      tmp=1
-    }
+        checked: false,
+        mb.window.setAlwaysOnTop(false),
+        tmp=0
+      }
+      else {
+        checked: true,
+        mb.window.setAlwaysOnTop(true),
+        tmp=1
+      }
     }
   },
   {
@@ -48,13 +48,19 @@ const contextMenu = electron.Menu.buildFromTemplate([
     label: 'Resize',
     click() {
       if(mb.window.getSize()[0]==700){
-    console.log(mb.window.getSize());
-    // mb.window.setSize(400,640,true);
-  }
-  else if(mb.window.getSize()[0]==400){
-    console.log(mb.window.getSize());
-    // mb.window.setSize(700,640,true);
-  }
+        // console.log(mb.window.getSize());
+        var x=mb.window.getPosition()[0];
+        var y=mb.window.getPosition()[1];
+        mb.window.setSize(400,640,true);
+        mb.window.setPosition(x+300,y,true);
+      }
+      else if(mb.window.getSize()[0]==400){
+        // console.log(mb.window.getSize());
+        var x=mb.window.getPosition()[0];
+        var y=mb.window.getPosition()[1];
+        mb.window.setSize(700,640,true);
+        mb.window.setPosition(x-300,y,true);
+      }
     }
   },
   {
@@ -63,6 +69,7 @@ const contextMenu = electron.Menu.buildFromTemplate([
   {
     label: 'Exit',
     click() {
+      electron.dialog.showMessageBox({title: "Thanks for trying Beta version", type:"info", message: "Feel free to report any issues faced on github page.\n(https://github.com/rahulpsd18/Whazzapp/issues)", buttons: ["OK"] });
       mb.app.quit();
     }
   }
@@ -74,4 +81,8 @@ mb.on('ready', function ready () {
   if (process.platform == 'win32') {
     mb.tray.setContextMenu(contextMenu);
   }
+});
+
+mb.on('show', function ready () {
+  mb.window.setSkipTaskbar(true);
 });
